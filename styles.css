@@ -1,0 +1,128 @@
+/* colors: #E5F5FF, #171754 */
+@import url('https://fonts.cdnfonts.com/css/itc-avant-garde-pro-md');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ITC Avant Garde Pro Md', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: #E5F5FF;
+    color: #171754;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 0px;
+}
+
+section {
+    display: grid;
+    gap: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+a.link:hover {
+    background-color: #0D2C5A;
+}
+
+.steps article {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.documentationItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.documentationItem {
+    background-color: #ffffff;
+    padding: 20px;
+    padding-bottom: 70px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.documentationItem a {
+    /* to the bottom left of the card and takes space */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #171754;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #171754;
+    color: #E5F5FF;
+    border-radius: 5px;
+}
+
+.documentationItem a:hover {
+    background-color: #0D2C5A;
+}
+
+.stepsPage a.backButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #171754;
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: #171754;
+    color: #E5F5FF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stepsPage a.backButton svg{
+    width: 20px;
+    height: 20px;
+    fill: #E5F5FF;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #171754;
+}
+.wo {
+    color: red;
+}
+
+article p svg {
+    width: 16px;
+    height: 16px;
+    fill: #171754;
+}

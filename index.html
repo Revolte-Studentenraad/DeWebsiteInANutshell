@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website aanpassen - documentatie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Hoe kan ik de website aanpassen? (In a Nutshell/ kurzgesagt)</h1>
+        <input type="search" id="search" placeholder="Zoek een doc.">
+        
+        <section class="documentationItems"></section>
+    </main>
+    <script>
+
+        let data = [
+            {
+                "title": "Gebruikers beheren",
+                "content": "Dit is de gebruikers beheren pagina",
+                "page": "gebruikersBeheren.html",
+            },
+            {
+                "title": "Kalender beheren",
+                "content": "Hier krijg je info over hoe je de kalender kan beheren",
+                "page": "kalenderBeheren.html",
+            },
+            {
+                "title": "Heet van de naald beheren",
+                "content": "Hier krijg je info over hoe je de heet van de naald kan beheren",
+                "page": "nieuweHeetVanDeNaald.html",
+            },
+            {
+                "title": "Naam aanpassen DSR en ASR",
+                "content": "Hier krijg je info over hoe je de naam van de DSR en ASR kan aanpassen",
+                "page": "naamAanpassenDSR.html",
+            }
+        ]
+
+        let search = document.getElementById('search');
+        let documentationItems = document.querySelector('.documentationItems');
+
+        search.addEventListener('input', function() {
+            let searchValue = search.value;
+            let filteredData = data.filter(function(item) {
+                return item.title.toLowerCase().includes(searchValue.toLowerCase());
+            });
+
+            documentationItems.innerHTML = '';
+
+            filteredData.forEach(function(item) {
+                let documentationItem = document.createElement('div');
+                documentationItem.classList.add('documentationItem');
+                documentationItem.innerHTML = `
+                <h2>${item.title}</h2>
+                <p>${item.content}</p>
+                <a href="./pages/${item.page}" class="link">Ga naar de pagina</a>
+                `;
+
+                documentationItems.appendChild(documentationItem);
+            });
+        });
+
+        search.dispatchEvent(new Event('input'));
+        search.addEventListener('input', function() {
+            if (search.value === '') {
+                documentationItems.innerHTML = '';
+
+                data.forEach(function(item) {
+                    let documentationItem = document.createElement('div');
+                    documentationItem.classList.add('documentationItem');
+                    documentationItem.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p>${item.content}</p>
+                    <a href="./pages/${item.page}" class="link">Ga naar de pagina</a>
+                    `;
+
+                    documentationItems.appendChild(documentationItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
