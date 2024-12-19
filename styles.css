@@ -29,6 +29,7 @@ main {
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 input {
@@ -69,10 +70,18 @@ a.link:hover {
 .documentationItem {
     background-color: #ffffff;
     padding: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 80px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.documentationItem:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: 0.3s;
 }
 
 .documentationItem a {
@@ -117,6 +126,7 @@ h2 {
     font-size: 1.5em;
     color: #171754;
 }
+
 .wo {
     color: red;
 }
@@ -125,4 +135,35 @@ article p svg {
     width: 16px;
     height: 16px;
     fill: #171754;
+}
+
+.fas {
+    font-size: 0.8em;
+    color: #171754;
+    padding-right: 0.3em;
+}
+
+.link i {
+    color: #fff;
+    padding-left: 0.3em;
+    transition: 0.3s;
+}
+
+.link:hover i {
+    transform: translateX(5px);
+    transition: 0.3s;
+}
+
+label {
+    position: relative;
+    height: 40px;
+}
+
+label img {
+    /* put the image on top of the whole label so the image is like sitting on the input */
+    position: absolute;
+    top: -10vh;
+    right: 0;
+    height: 10vh;
+    transform: scaleX(-1);
 }

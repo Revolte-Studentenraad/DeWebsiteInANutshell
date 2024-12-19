@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website aanpassen - documentatie</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <main>
-        <h1>Hoe kan ik de website aanpassen? (In a Nutshell/ kurzgesagt)</h1>
-        <input type="search" id="search" placeholder="Zoek een doc.">
+        <h1>Hoe kan ik de website aanpassen? 
+            <br />
+            (In a Nutshell/ kurzgesagt)</h1>
+            <label for="search">
+                <img src="./assets/vogel-revolte-kijkt-onder.svg" alt="">
+                <input type="search" id="search" placeholder="Zoek een doc.">
+            </label>
         
         <section class="documentationItems"></section>
     </main>
@@ -17,21 +23,25 @@
 
         let data = [
             {
+                "icon": "fas fa-user",
                 "title": "Gebruikers beheren",
                 "content": "Dit is de gebruikers beheren pagina",
                 "page": "gebruikersBeheren.html",
             },
             {
+                "icon": "fas fa-calendar",
                 "title": "Kalender beheren",
                 "content": "Hier krijg je info over hoe je de kalender kan beheren",
                 "page": "kalenderBeheren.html",
             },
             {
+                "icon": "fas fa-newspaper",
                 "title": "Heet van de naald beheren",
                 "content": "Hier krijg je info over hoe je de heet van de naald kan beheren",
                 "page": "nieuweHeetVanDeNaald.html",
             },
             {
+                "icon": "fas fa-user",
                 "title": "Naam aanpassen DSR en ASR",
                 "content": "Hier krijg je info over hoe je de naam van de DSR en ASR kan aanpassen",
                 "page": "naamAanpassenDSR.html",
@@ -53,9 +63,14 @@
                 let documentationItem = document.createElement('div');
                 documentationItem.classList.add('documentationItem');
                 documentationItem.innerHTML = `
-                <h2>${item.title}</h2>
+                <h2>
+                    <i class="${item.icon}"></i>
+                    ${item.title}</h2>
                 <p>${item.content}</p>
-                <a href="./pages/${item.page}" class="link">Ga naar de pagina</a>
+                <a href="./pages/${item.page}" class="link">
+                    Ga naar de pagina
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
                 `;
 
                 documentationItems.appendChild(documentationItem);
@@ -71,9 +86,14 @@
                     let documentationItem = document.createElement('div');
                     documentationItem.classList.add('documentationItem');
                     documentationItem.innerHTML = `
-                    <h2>${item.title}</h2>
+                    <h2>
+                        <i class="${item.icon}"></i>
+                        ${item.title}</h2>
                     <p>${item.content}</p>
-                    <a href="./pages/${item.page}" class="link">Ga naar de pagina</a>
+                    <a href="./pages/${item.page}" class="link">
+                        Ga naar de pagina
+                        <i class="fas fa-arrow-right"></i>
+                        </a>
                     `;
 
                     documentationItems.appendChild(documentationItem);
